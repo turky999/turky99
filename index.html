@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>شركة خدمات استقدام</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Tajawal', sans-serif;
-      background-color: #FAFAFA;
+      background-color: #f9f9f9;
       color: #333;
     }
-
     header, footer {
       background-color: #4DB6AC;
       color: white;
@@ -23,116 +22,114 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
-
     nav a {
       color: white;
       margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
     }
-
     .hero {
-      background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://images.unsplash.com/photo-1600488994800-497f6d91ad6d') center/cover;
-      color: #333;
-      height: 350px;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('download (1).jpg') center/cover no-repeat;
+      height: 400px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
+      color: white;
       padding: 2rem;
     }
-
     .hero h2 {
       font-size: 2.5rem;
       max-width: 800px;
+      line-height: 1.6;
     }
-
     .section {
-      padding: 2rem;
-      margin: 1.5rem auto;
       max-width: 1100px;
-      background: #FFFFFF;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-
     .section h2 {
       text-align: center;
       color: #4DB6AC;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
-
-    .services {
+    .services, .stats, .faq {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
     }
-
-    .service {
-      background: #FDFDFD;
+    .service, .stat, .faq-item {
+      text-align: center;
+      background: #fdfdfd;
       padding: 1.5rem;
       border-radius: 10px;
-      text-align: center;
-      border-top: 4px solid #FFB74D;
-      transition: all 0.3s;
+      border: 1px solid #eaeaea;
     }
-
-    .service:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .service i {
+    .service i, .stat i {
       font-size: 2.5rem;
       color: #FFB74D;
       margin-bottom: 10px;
     }
-
     form {
       display: flex;
       flex-direction: column;
       gap: 15px;
     }
-
-    input, textarea {
+    input, textarea, select {
       padding: 0.8rem;
       border: 1px solid #ccc;
       border-radius: 6px;
     }
-
     button {
       background-color: #FFB74D;
       color: white;
-      padding: 0.9rem;
+      padding: 0.8rem;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 1rem;
       font-weight: bold;
     }
-
-    button:hover {
-      background-color: #f59c20;
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 8px;
     }
-
-    footer {
+    .testimonial {
       text-align: center;
-      flex-direction: column;
-      gap: 8px;
+      font-style: italic;
+      margin-bottom: 1rem;
     }
-
-    @media (max-width: 600px) {
-      .hero h2 {
-        font-size: 1.5rem;
-      }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #25D366;
+      color: white;
+      font-size: 28px;
+      padding: 14px;
+      border-radius: 50%;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
   </style>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <div id="header"></div>
+  <header>
+    <h1>شركة خدمات استقدام</h1>
+    <nav>
+      <a href="#services">الخدمات</a>
+      <a href="#about">عن الشركة</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+  </header>
 
   <section class="hero">
     <h2>نقود خدمات الاستقدام الرقمية برؤية عصرية وشفافية كاملة</h2>
@@ -142,56 +139,174 @@
     <h2>خدماتنا</h2>
     <div class="services">
       <div class="service">
-        <i class="fas fa-user-friends"></i>
+        <i class="fas fa-user-nurse"></i>
         <h3>استقدام منزلي</h3>
-        <p>عاملات منازل مؤهلات وفق أعلى المعايير وبضمان كامل.</p>
+        <p>عاملات مؤهلات بعقود رسمية وبضمان كامل.</p>
       </div>
       <div class="service">
         <i class="fas fa-car"></i>
         <h3>سائقين خاصين</h3>
-        <p>نوفر سائقين محترفين بعقود موثوقة وسرعة في الإجراءات.</p>
+        <p>سائقون محترفون بخبرة وكفاءة عالية.</p>
       </div>
       <div class="service">
         <i class="fas fa-heartbeat"></i>
-        <h3>ممرضات منزليات</h3>
-        <p>لرعاية كبار السن أو ذوي الاحتياجات الخاصة بجودة عالية.</p>
+        <h3>ممرضات</h3>
+        <p>ممرضات مدربات لتقديم الرعاية المنزلية.</p>
       </div>
       <div class="service">
-        <i class="fas fa-sync-alt"></i>
-        <h3>متابعة رقمية</h3>
-        <p>نظام إلكتروني لمتابعة حالة الطلبات والاستقدام بدقة.</p>
+        <i class="fas fa-globe"></i>
+        <h3>تتبع رقمي</h3>
+        <p>تتبع طلبك لحظة بلحظة عبر منصتنا.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="about">
-    <h2>من نحن</h2>
-    <p>
-      نحن شركة سعودية مرخصة متخصصة في الاستقدام العصري، نستخدم أدوات رقمية متقدمة لتقديم خدمات موثوقة، مرنة وسريعة، مع فريق دعم متكامل.
-      نلتزم بتحقيق أهداف رؤية 2030 عبر التحول الرقمي لخدمة المجتمع بجودة عالية.
-    </p>
+  <<section class="section stats">
+  <h2>إحصائياتنا</h2>
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+    <!-- الرسم البياني -->
+    <canvas id="statsChart" style="max-width: 600px; width: 100%;"></canvas>
+
+    <!-- البطاقات -->
+    <div class="stats" style="max-width: 800px; width: 100%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;">
+      <div class="stat" style="flex: 1; min-width: 200px; background: #fdfdfd; padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid #eaeaea;">
+        <i class="fas fa-users" style="font-size: 2rem; color: #4DB6AC;"></i>
+        <h3>+200</h3>
+        <p>عميل راضٍ</p>
+      </div>
+      <div class="stat" style="flex: 1; min-width: 200px; background: #fdfdfd; padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid #eaeaea;">
+        <i class="fas fa-flag" style="font-size: 2rem; color: #FFB74D;"></i>
+        <h3>+15</h3>
+        <p>دولة استقدام</p>
+      </div>
+      <div class="stat" style="flex: 1; min-width: 200px; background: #fdfdfd; padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid #eaeaea;">
+        <i class="fas fa-briefcase" style="font-size: 2rem; color: #9575CD;"></i>
+        <h3>+10</h3>
+        <p>سنوات خبرة</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- مكتبة الرسم البياني -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('statsChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['عملاء راضون', 'دول الاستقدام', 'سنوات الخبرة'],
+      datasets: [{
+        label: 'إحصائيات عامة',
+        data: [200, 15, 10],
+        backgroundColor: ['#4DB6AC', '#FFB74D', '#9575CD']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'رسم بياني للإحصائيات',
+          font: { size: 18 }
+        }
+      },
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+</script>
+
+  <section class="section faq">
+    <h2>الأسئلة الشائعة</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h4>ما مدة الاستقدام؟</h4>
+        <p>من 30 إلى 90 يوم حسب الدولة.</p>
+      </div>
+      <div class="faq-item">
+        <h4>هل يوجد ضمان؟</h4>
+        <p>نعم، يوجد ضمان كامل حسب نوع الخدمة.</p>
+      </div>
+      <div class="faq-item">
+        <h4>ما طرق الدفع؟</h4>
+        <p>تحويل بنكي، مدى، أو دفع نقدي.</p>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="contact">
-    <h2>تواصل معنا</h2>
-    <form onsubmit="event.preventDefault(); alert('تم إرسال رسالتك بنجاح!');">
-      <input type="text" placeholder="اسمك الكامل" required />
-      <input type="email" placeholder="البريد الإلكتروني" required />
-      <textarea rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
-      <button type="submit">إرسال</button>
+    <h2>طلب خدمة أو تواصل معنا</h2>
+    <form onsubmit="event.preventDefault(); alert('تم إرسال طلبك بنجاح!');">
+      <input type="text" placeholder="الاسم الكامل" required>
+      <input type="tel" placeholder="رقم الجوال" required>
+      <input type="email" placeholder="البريد الإلكتروني">
+      <select required>
+        <option value="">اختر نوع الخدمة</option>
+        <option>استقدام منزلي</option>
+        <option>سائق خاص</option>
+        <option>ممرضة منزلية</option>
+      </select>
+      <textarea placeholder="ملاحظات إضافية"></textarea>
+      <button type="submit">إرسال الطلب</button>
+    </form>
+    <br>
+    <h3>موقعنا</h3>
+    <iframe src="https://maps.google.com/maps?q=riyadh&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+  </section>
+
+  <section class="section">
+    <h2>آراء العملاء</h2>
+    <div class="testimonial">
+      "خدمة سريعة وأسلوب راقٍ. شكراً لكم!" – سارة
+    </div>
+    <div class="testimonial">
+      "من أفضل شركات الاستقدام. تعامل راقٍ وسهل." – فهد
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>اشترك في النشرة البريدية</h2>
+    <form onsubmit="event.preventDefault(); alert('تم الاشتراك بنجاح!');">
+      <input type="email" placeholder="ادخل بريدك الإلكتروني" required>
+      <button type="submit">اشترك</button>
     </form>
   </section>
 
-  <div id="footer"></div>
+  <footer>
+    <p>© 2025 شركة خدمات استقدام</p>
+    <p><a href="#" style="color:white; text-decoration: underline;">سياسة الخصوصية</a> | <a href="#" style="color:white; text-decoration: underline;">الشروط والأحكام</a></p>
+  </footer>
+
+  <a href="https://wa.me/966501234567" class="whatsapp-float" target="_blank" title="تواصل معنا على واتساب">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <script>
-    fetch("header.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("header").innerHTML = data);
-
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("footer").innerHTML = data);
+    const ctx = document.getElementById('statsChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['عملاء راضون', 'دول الاستقدام', 'سنوات الخبرة'],
+        datasets: [{
+          label: 'إحصائيات عامة',
+          data: [200, 15, 10],
+          backgroundColor: ['#4DB6AC', '#FFB74D', '#9575CD']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'رسم بياني للإحصائيات', font: { size: 18 } }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
   </script>
 
 </body>
