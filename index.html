@@ -117,6 +117,13 @@
       text-align: center;
       z-index: 1000;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-float i {
+      font-family: "Font Awesome 5 Brands";
+    }
+    .whatsapp-float:hover {
+      background-color: #1DA851;
     }
   </style>
 </head>
@@ -161,79 +168,51 @@
     </div>
   </section>
 
-  <<section class="section stats">
-  <h2>إحصائياتنا</h2>
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
-    <!-- الرسم البياني -->
-    <canvas id="statsChart" style="max-width: 600px; width: 100%;"></canvas>
-
-    <!-- البطاقات -->
-    <div class="stats" style="max-width: 800px; width: 100%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;">
-      <div class="stat" style="flex: 1; min-width: 200px; background: #fdfdfd; padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid #eaeaea;">
-        <i class="fas fa-users" style="font-size: 2rem; color: #4DB6AC;"></i>
-        <h3>+200</h3>
-        <p>عميل راضٍ</p>
-      </div>
-      <div class="stat" style="flex: 1; min-width: 200px; background: #fdfdfd; padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid #eaeaea;">
-        <i class="fas fa-flag" style="font-size: 2rem; color: #FFB74D;"></i>
-        <h3>+15</h3>
-        <p>دولة استقدام</p>
-      </div>
-      <div class="stat" style="flex: 1; min-width: 200px; background: #fdfdfd; padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid #eaeaea;">
-        <i class="fas fa-briefcase" style="font-size: 2rem; color: #9575CD;"></i>
-        <h3>+10</h3>
-        <p>سنوات خبرة</p>
+  <section class="section stats">
+    <h2>إحصائياتنا</h2>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+      <canvas id="statsChart" style="max-width: 600px; width: 100%;"></canvas>
+      <div class="stats" style="max-width: 800px; width: 100%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;">
+        <div class="stat"><i class="fas fa-users"></i><h3>+200</h3><p>عميل راضٍ</p></div>
+        <div class="stat"><i class="fas fa-flag"></i><h3>+15</h3><p>دولة استقدام</p></div>
+        <div class="stat"><i class="fas fa-briefcase"></i><h3>+10</h3><p>سنوات خبرة</p></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- مكتبة الرسم البياني -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  const ctx = document.getElementById('statsChart').getContext('2d');
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['عملاء راضون', 'دول الاستقدام', 'سنوات الخبرة'],
-      datasets: [{
-        label: 'إحصائيات عامة',
-        data: [200, 15, 10],
-        backgroundColor: ['#4DB6AC', '#FFB74D', '#9575CD']
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false },
-        title: {
-          display: true,
-          text: 'رسم بياني للإحصائيات',
-          font: { size: 18 }
-        }
+  <script>
+    const ctx = document.getElementById('statsChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['عملاء راضون', 'دول الاستقدام', 'سنوات الخبرة'],
+        datasets: [{
+          label: 'إحصائيات عامة',
+          data: [200, 15, 10],
+          backgroundColor: ['#4DB6AC', '#FFB74D', '#9575CD']
+        }]
       },
-      scales: {
-        y: { beginAtZero: true }
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'رسم بياني للإحصائيات',
+            font: { size: 18 }
+          }
+        },
+        scales: { y: { beginAtZero: true } }
       }
-    }
-  });
-</script>
+    });
+  </script>
 
   <section class="section faq">
     <h2>الأسئلة الشائعة</h2>
     <div class="faq">
-      <div class="faq-item">
-        <h4>ما مدة الاستقدام؟</h4>
-        <p>من 30 إلى 90 يوم حسب الدولة.</p>
-      </div>
-      <div class="faq-item">
-        <h4>هل يوجد ضمان؟</h4>
-        <p>نعم، يوجد ضمان كامل حسب نوع الخدمة.</p>
-      </div>
-      <div class="faq-item">
-        <h4>ما طرق الدفع؟</h4>
-        <p>تحويل بنكي، مدى، أو دفع نقدي.</p>
-      </div>
+      <div class="faq-item"><h4>ما مدة الاستقدام؟</h4><p>من 30 إلى 90 يوم حسب الدولة.</p></div>
+      <div class="faq-item"><h4>هل يوجد ضمان؟</h4><p>نعم، يوجد ضمان كامل حسب نوع الخدمة.</p></div>
+      <div class="faq-item"><h4>ما طرق الدفع؟</h4><p>تحويل بنكي، مدى، أو دفع نقدي.</p></div>
     </div>
   </section>
 
@@ -259,12 +238,8 @@
 
   <section class="section">
     <h2>آراء العملاء</h2>
-    <div class="testimonial">
-      "خدمة سريعة وأسلوب راقٍ. شكراً لكم!" – سارة
-    </div>
-    <div class="testimonial">
-      "من أفضل شركات الاستقدام. تعامل راقٍ وسهل." – فهد
-    </div>
+    <div class="testimonial">"خدمة سريعة وأسلوب راقٍ. شكراً لكم!" – سارة</div>
+    <div class="testimonial">"من أفضل شركات الاستقدام. تعامل راقٍ وسهل." – فهد</div>
   </section>
 
   <section class="section">
@@ -280,34 +255,9 @@
     <p><a href="#" style="color:white; text-decoration: underline;">سياسة الخصوصية</a> | <a href="#" style="color:white; text-decoration: underline;">الشروط والأحكام</a></p>
   </footer>
 
-  <a href="https://wa.me/966501234567" class="whatsapp-float" target="_blank" title="تواصل معنا على واتساب">
+  <a href="https://wa.me/966500155590" class="whatsapp-float" target="_blank" title="تواصل معنا على واتساب">
     <i class="fab fa-whatsapp"></i>
   </a>
-
-  <script>
-    const ctx = document.getElementById('statsChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['عملاء راضون', 'دول الاستقدام', 'سنوات الخبرة'],
-        datasets: [{
-          label: 'إحصائيات عامة',
-          data: [200, 15, 10],
-          backgroundColor: ['#4DB6AC', '#FFB74D', '#9575CD']
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          title: { display: true, text: 'رسم بياني للإحصائيات', font: { size: 18 } }
-        },
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
-    });
-  </script>
 
 </body>
 </html>
