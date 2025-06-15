@@ -15,21 +15,6 @@
       background-color: #f9f9f9;
       color: #333;
     }
-    header, footer {
-      background-color: #4DB6AC;
-      color: white;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
     .hero {
       background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('download (1).jpg') center/cover no-repeat;
       height: 400px;
@@ -129,169 +114,8 @@
 </head>
 <body>
 
-  <header>
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; width: 100%;">
-      <h1 style="font-size: 1.8rem; margin: 0;">شركة خدمات استقدام</h1>
-      <div class="social-icons" style="display: flex; gap: 10px;">
-        <a href="https://wa.me/966500155590" target="_blank" title="واتساب" style="color: white; font-size: 1.2rem;"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://twitter.com/" target="_blank" title="تويتر" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
-        <a href="mailto:info@example.com" title="البريد الإلكتروني" style="color: white; font-size: 1.2rem;"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-    <nav style="margin-top: 1rem;">
-      <a href="#services">الخدمات</a>
-      <a href="#about">عن الشركة</a>
-      <a href="#contact">تواصل معنا</a>
-      <a href="#pricing">الأسعار</a>
-      <a href="#faq">الأسئلة الشائعة</a>
-      <a href="#testimonials">آراء العملاء</a>
-      <a href="#newsletter">النشرة البريدية</a>
-      <a href="#order" style="background-color: #FFB74D; color: white; padding: 8px 16px; border-radius: 6px; margin-right: 10px;">طلب خدمة الآن</a>
-    </nav>
-  </header>
-
-  <!-- بقية الكود مستمر مثل الإحصائيات والخدمات... -->
-
-  <!-- زر واتساب عائم -->
-  <a href="https://wa.me/966500155590" class="whatsapp-float" target="_blank" title="تواصل معنا على واتساب">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شركة خدمات استقدام</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Tajawal', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header, footer {
-      background-color: #4DB6AC;
-      color: white;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('download (1).jpg') center/cover no-repeat;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 2rem;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      max-width: 800px;
-      line-height: 1.6;
-    }
-    .section {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .section h2 {
-      text-align: center;
-      color: #4DB6AC;
-      margin-bottom: 1.5rem;
-    }
-    .services, .stats, .faq {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .service, .stat, .faq-item {
-      text-align: center;
-      background: #fdfdfd;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border: 1px solid #eaeaea;
-    }
-    .service i, .stat i {
-      font-size: 2.5rem;
-      color: #FFB74D;
-      margin-bottom: 10px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    input, textarea, select {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    button {
-      background-color: #FFB74D;
-      color: white;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 8px;
-    }
-    .testimonial {
-      text-align: center;
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #25D366;
-      color: white;
-      font-size: 28px;
-      padding: 14px;
-      border-radius: 50%;
-      text-align: center;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
-    }
-    .whatsapp-float i {
-      font-family: "Font Awesome 5 Brands";
-    }
-    .whatsapp-float:hover {
-      background-color: #1DA851;
-    }
-  </style>
-</head>
-<body>
-
-  
+  <!-- استدعاء الهيدر -->
+  <div id="header-placeholder"></div>
 
   <section class="hero">
     <h2>نقود خدمات الاستقدام الرقمية برؤية عصرية وشفافية كاملة</h2>
@@ -335,34 +159,7 @@
     </div>
   </section>
 
-  <script>
-    const ctx = document.getElementById('statsChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['عملاء راضون', 'دول الاستقدام', 'سنوات الخبرة'],
-        datasets: [{
-          label: 'إحصائيات عامة',
-          data: [200, 15, 10],
-          backgroundColor: ['#4DB6AC', '#FFB74D', '#9575CD']
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          title: {
-            display: true,
-            text: 'رسم بياني للإحصائيات',
-            font: { size: 18 }
-          }
-        },
-        scales: { y: { beginAtZero: true } }
-      }
-    });
-  </script>
-
-  <section class="section faq">
+  <section class="section faq" id="faq">
     <h2>الأسئلة الشائعة</h2>
     <div class="faq">
       <div class="faq-item"><h4>ما مدة الاستقدام؟</h4><p>من 30 إلى 90 يوم حسب الدولة.</p></div>
@@ -391,13 +188,13 @@
     <iframe src="https://maps.google.com/maps?q=riyadh&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
   </section>
 
-  <section class="section">
+  <section class="section" id="testimonials">
     <h2>آراء العملاء</h2>
     <div class="testimonial">"خدمة سريعة وأسلوب راقٍ. شكراً لكم!" – سارة</div>
     <div class="testimonial">"من أفضل شركات الاستقدام. تعامل راقٍ وسهل." – فهد</div>
   </section>
 
-  <section class="section">
+  <section class="section" id="newsletter">
     <h2>اشترك في النشرة البريدية</h2>
     <form onsubmit="event.preventDefault(); alert('تم الاشتراك بنجاح!');">
       <input type="email" placeholder="ادخل بريدك الإلكتروني" required>
@@ -405,14 +202,54 @@
     </form>
   </section>
 
-  <footer>
-    <p>© 2025 شركة خدمات استقدام</p>
-    <p><a href="#" style="color:white; text-decoration: underline;">سياسة الخصوصية</a> | <a href="#" style="color:white; text-decoration: underline;">الشروط والأحكام</a></p>
-  </footer>
+  <!-- استدعاء الفوتر -->
+  <div id="footer-placeholder"></div>
 
+  <!-- زر واتساب عائم -->
   <a href="https://wa.me/966500155590" class="whatsapp-float" target="_blank" title="تواصل معنا على واتساب">
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <!-- استدعاء الهيدر والفوتر من ملفات خارجية -->
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("header-placeholder").innerHTML = data)
+      .catch(error => console.error("فشل تحميل الهيدر:", error));
+
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("footer-placeholder").innerHTML = data)
+      .catch(error => console.error("فشل تحميل الفوتر:", error));
+  </script>
+
+  <!-- رسم الإحصائيات -->
+  <script>
+    const ctx = document.getElementById('statsChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['عملاء راضون', 'دول الاستقدام', 'سنوات الخبرة'],
+        datasets: [{
+          label: 'إحصائيات عامة',
+          data: [200, 15, 10],
+          backgroundColor: ['#4DB6AC', '#FFB74D', '#9575CD']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'رسم بياني للإحصائيات',
+            font: { size: 18 }
+          }
+        },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
 
 </body>
 </html>
