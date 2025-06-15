@@ -3,7 +3,7 @@
     <div class="logo">شركة الاستقدام</div>
     <nav class="desktop-nav">
       <ul class="nav-links">
-        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="serve.html">خدماتنا</a></li>
         <li><a href="#stats">إحصائيات</a></li>
         <li><a href="#faq">الأسئلة الشائعة</a></li>
         <li><a href="#contact">اتصل بنا</a></li>
@@ -14,11 +14,30 @@
     </button>
   </div>
 </header>
+
 <div class="mobile-menu" id="mobileMenu">
   <ul>
-    <li><a href="#services">خدماتنا</a></li>
+    <li><a href="serve.html">خدماتنا</a></li>
     <li><a href="#stats">إحصائيات</a></li>
     <li><a href="#faq">الأسئلة الشائعة</a></li>
     <li><a href="#contact">اتصل بنا</a></li>
   </ul>
 </div>
+
+<script>
+  // كود تشغيل القائمة المنسدلة
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+  });
+</script>
