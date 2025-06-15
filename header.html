@@ -1,83 +1,92 @@
-<header style="background-color: #4DB6AC; color: white; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-  <!-- عنوان الشركة -->
-  <h1 style="font-size: 1.8rem; margin: 0;">شركة خدمات استقدام</h1>
-
-  <!-- زر القائمة للشاشات الصغيرة -->
-  <button id="menu-toggle" style="background: none; border: none; font-size: 1.8rem; color: white; cursor: pointer;" aria-label="القائمة">
-    &#9776;
-  </button>
-
-  <!-- قائمة التنقل -->
-  <nav id="main-menu">
-    <a href="#services">الخدمات</a>
-    <a href="#about">عن الشركة</a>
-    <a href="#contact">تواصل معنا</a>
-    <a href="#pricing">الأسعار</a>
-    <a href="#faq">الأسئلة الشائعة</a>
-    <a href="#testimonials">آراء العملاء</a>
-    <a href="#newsletter">النشرة البريدية</a>
-    <a href="#order" class="cta-button">طلب خدمة الآن</a>
-  </nav>
+<header id="main-header">
+  <div class="header-container">
+    <h1 class="logo">شركة خدمات استقدام</h1>
+    <button id="menu-toggle" aria-label="فتح القائمة">☰</button>
+    <nav id="main-menu" class="menu">
+      <a href="#services">الخدمات</a>
+      <a href="#about">عن الشركة</a>
+      <a href="#contact">تواصل معنا</a>
+      <a href="#pricing">الأسعار</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+      <a href="#testimonials">آراء العملاء</a>
+      <a href="#newsletter">النشرة البريدية</a>
+      <a href="#order" class="cta">طلب خدمة الآن</a>
+    </nav>
+  </div>
 </header>
 
-<!-- CSS للتنسيق والاستجابة -->
 <style>
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    align-items: center;
+  header {
+    background-color: #4DB6AC;
+    color: white;
+    padding: 1rem 2rem;
   }
 
-  nav a {
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  #menu-toggle {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .menu a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 5px;
-    transition: color 0.2s ease;
   }
 
-  nav a:hover {
-    text-decoration: underline;
-  }
-
-  .cta-button {
+  .cta {
     background-color: #FFB74D;
     color: white;
     padding: 8px 16px;
     border-radius: 6px;
   }
 
-  /* إخفاء زر القائمة في الشاشات الكبيرة */
-  #menu-toggle {
-    display: none;
-  }
-
-  /* الشاشات الصغيرة */
   @media (max-width: 768px) {
     #menu-toggle {
       display: block;
     }
 
-    nav {
+    .menu {
       display: none;
       flex-direction: column;
       width: 100%;
-      margin-top: 10px;
+      margin-top: 1rem;
     }
 
-    nav.show {
+    .menu.show {
       display: flex;
     }
   }
 </style>
 
-<!-- JavaScript للتحكم بالقائمة -->
 <script>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('main-menu');
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('main-menu');
 
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
+    toggle.addEventListener('click', function () {
+      menu.classList.toggle('show');
+    });
   });
 </script>
