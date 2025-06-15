@@ -1,8 +1,12 @@
-<header id="main-header">
+<header style="background-color: #4DB6AC; color: white; padding: 1rem 2rem;">
   <div class="header-container">
     <h1 class="logo">شركة خدمات استقدام</h1>
+    
+    <!-- زر القائمة ☰ -->
     <button id="menu-toggle" aria-label="فتح القائمة">☰</button>
-    <nav id="main-menu" class="menu">
+
+    <!-- قائمة التنقل -->
+    <nav id="main-menu">
       <a href="#services">الخدمات</a>
       <a href="#about">عن الشركة</a>
       <a href="#contact">تواصل معنا</a>
@@ -16,12 +20,6 @@
 </header>
 
 <style>
-  header {
-    background-color: #4DB6AC;
-    color: white;
-    padding: 1rem 2rem;
-  }
-
   .header-container {
     display: flex;
     justify-content: space-between;
@@ -40,16 +38,16 @@
     border: none;
     color: white;
     cursor: pointer;
-    display: none;
+    display: none; /* يظهر فقط على الشاشات الصغيرة */
   }
 
-  .menu {
+  #main-menu {
     display: flex;
-    gap: 1rem;
+    gap: 15px;
     flex-wrap: wrap;
   }
 
-  .menu a {
+  #main-menu a {
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -57,7 +55,6 @@
 
   .cta {
     background-color: #FFB74D;
-    color: white;
     padding: 8px 16px;
     border-radius: 6px;
   }
@@ -67,26 +64,28 @@
       display: block;
     }
 
-    .menu {
+    #main-menu {
       display: none;
       flex-direction: column;
       width: 100%;
       margin-top: 1rem;
+      gap: 10px;
     }
 
-    .menu.show {
+    #main-menu.show {
       display: flex;
     }
   }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('main-menu');
+  // يتم تنفيذ هذا السكربت عند تحميله مباشرة
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('main-menu');
 
-    toggle.addEventListener('click', function () {
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
       menu.classList.toggle('show');
     });
-  });
+  }
 </script>
