@@ -1,91 +1,24 @@
-<header style="background-color: #4DB6AC; color: white; padding: 1rem 2rem;">
+<header>
   <div class="header-container">
-    <h1 class="logo">شركة خدمات استقدام</h1>
-    
-    <!-- زر القائمة ☰ -->
-    <button id="menu-toggle" aria-label="فتح القائمة">☰</button>
-
-    <!-- قائمة التنقل -->
-    <nav id="main-menu">
-      <a href="#services">الخدمات</a>
-      <a href="#about">عن الشركة</a>
-      <a href="#contact">تواصل معنا</a>
-      <a href="#pricing">الأسعار</a>
-      <a href="#faq">الأسئلة الشائعة</a>
-      <a href="#testimonials">آراء العملاء</a>
-      <a href="#newsletter">النشرة البريدية</a>
-      <a href="#order" class="cta">طلب خدمة الآن</a>
+    <div class="logo">شركة الاستقدام</div>
+    <nav class="desktop-nav">
+      <ul class="nav-links">
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#stats">إحصائيات</a></li>
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+        <li><a href="#contact">اتصل بنا</a></li>
+      </ul>
     </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
   </div>
 </header>
-
-<style>
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-    margin: 0;
-  }
-
-  #menu-toggle {
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    display: none; /* يظهر فقط على الشاشات الصغيرة */
-  }
-
-  #main-menu {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-
-  #main-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .cta {
-    background-color: #FFB74D;
-    padding: 8px 16px;
-    border-radius: 6px;
-  }
-
-  @media (max-width: 768px) {
-    #menu-toggle {
-      display: block;
-    }
-
-    #main-menu {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      margin-top: 1rem;
-      gap: 10px;
-    }
-
-    #main-menu.show {
-      display: flex;
-    }
-  }
-</style>
-
-<script>
-  // يتم تنفيذ هذا السكربت عند تحميله مباشرة
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('main-menu');
-
-  if (toggle && menu) {
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-  }
-</script>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#services">خدماتنا</a></li>
+    <li><a href="#stats">إحصائيات</a></li>
+    <li><a href="#faq">الأسئلة الشائعة</a></li>
+    <li><a href="#contact">اتصل بنا</a></li>
+  </ul>
+</div>
