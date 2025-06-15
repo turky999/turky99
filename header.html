@@ -1,23 +1,47 @@
-<header>
-  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-    <h1 style="font-size: 1.8rem; margin: 0;">شركة خدمات استقدام</h1>
+<header style="background-color: #4DB6AC; color: white; padding: 1.2rem 2rem; position: relative;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1 style="font-size: 1.5rem; margin: 0;">شركة خدمات استقدام</h1>
     
-    <!-- روابط التواصل الاجتماعي -->
-    <div class="social-icons" style="display: flex; gap: 10px;">
-      <a href="https://wa.me/966500155590" target="_blank" title="واتساب" style="color: white; font-size: 1.2rem;"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://twitter.com/" target="_blank" title="تويتر" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
-      <a href="mailto:info@example.com" title="البريد الإلكتروني" style="color: white; font-size: 1.2rem;"><i class="fas fa-envelope"></i></a>
+    <!-- زر القائمة الجانبية -->
+    <div id="menuToggle" style="font-size: 1.8rem; cursor: pointer;">
+      &#9776;
     </div>
   </div>
 
-  <nav style="margin-top: 1rem;">
-    <a href="#services">الخدمات</a>
-    <a href="#about">عن الشركة</a>
-    <a href="#contact">تواصل معنا</a>
-    <a href="#pricing">الأسعار</a>
-    <a href="#faq">الأسئلة الشائعة</a>
-    <a href="#testimonials">آراء العملاء</a>
-    <a href="#newsletter">النشرة البريدية</a>
-    <a href="#order" style="background-color: #FFB74D; color: white; padding: 8px 16px; border-radius: 6px; margin-right: 10px;">طلب خدمة الآن</a>
-  </nav>
+  <!-- القائمة الجانبية -->
+  <div id="sideMenu" style="position: fixed; top: 0; right: -300px; width: 280px; height: 100%; background: #00695C; color: white; padding: 2rem 1.5rem; transition: right 0.3s ease; z-index: 999;">
+    <span id="closeMenu" style="font-size: 1.5rem; cursor: pointer; position: absolute; top: 10px; left: 15px;">&times;</span>
+    
+    <nav style="display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem;">
+      <a href="#services" style="color: white; text-decoration: none;">الخدمات</a>
+      <a href="#about" style="color: white; text-decoration: none;">عن الشركة</a>
+      <a href="#contact" style="color: white; text-decoration: none;">تواصل معنا</a>
+      <a href="#pricing" style="color: white; text-decoration: none;">الأسعار</a>
+      <a href="#faq" style="color: white; text-decoration: none;">الأسئلة الشائعة</a>
+      <a href="#testimonials" style="color: white; text-decoration: none;">آراء العملاء</a>
+      <a href="#newsletter" style="color: white; text-decoration: none;">النشرة البريدية</a>
+      <a href="#order" style="background-color: #FFB74D; color: white; padding: 10px; border-radius: 6px; text-align: center;">طلب خدمة الآن</a>
+    </nav>
+
+    <!-- روابط تواصل -->
+    <div style="display: flex; gap: 15px; margin-top: 2rem;">
+      <a href="https://wa.me/966500155590" target="_blank" title="واتساب" style="color: #25D366;"><i class="fab fa-whatsapp fa-lg"></i></a>
+      <a href="https://twitter.com/" target="_blank" title="تويتر" style="color: #1DA1F2;"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="mailto:info@example.com" title="البريد" style="color: #FFEB3B;"><i class="fas fa-envelope fa-lg"></i></a>
+    </div>
+  </div>
+
+  <!-- سكربت تشغيل القائمة -->
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const sideMenu = document.getElementById("sideMenu");
+    const closeBtn = document.getElementById("closeMenu");
+
+    toggle.onclick = () => {
+      sideMenu.style.right = "0";
+    };
+    closeBtn.onclick = () => {
+      sideMenu.style.right = "-300px";
+    };
+  </script>
 </header>
